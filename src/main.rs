@@ -1,3 +1,22 @@
+use leptos::*;
+
+#[component]
+fn App() -> impl IntoView {
+    let (count, set_count) = create_signal(0);
+
+    view! {
+        <button
+            on:click=move |_| {
+                set_count(3);
+            }
+        >
+            "Click me: "
+            {move || count.get()}
+        </button>
+    }
+}
+
 fn main() {
-    println!("Hello, world!");
+    leptos::mount_to_body(|| view! { <App/> })
+
 }
