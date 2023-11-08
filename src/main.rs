@@ -7,7 +7,7 @@ fn App() -> impl IntoView {
     view! {
         <button
             on:click=move |_| {
-                set_count(3);
+                set_count.set(3);
             }
         >
             "Click me: "
@@ -17,6 +17,6 @@ fn App() -> impl IntoView {
 }
 
 fn main() {
-    leptos::mount_to_body(|| view! { <App/> })
-
+    leptos::mount_to_body(|| view! { <App/> });
+    println!("hello world!");
 }
